@@ -1,0 +1,217 @@
+.canvas {
+    position: relative;
+    z-index: 5;
+    width: 92%;
+    max-width: 480px;
+    margin: 1rem auto 4rem auto;
+
+    background: #BFD7FF;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-radius: 28px;
+
+    box-shadow:
+        0 25px 50px -12px rgba(0, 0, 0, 0.08),
+        0 10px 20px -5px rgba(0, 0, 0, 0.04);
+
+    padding: 2.5rem 2rem;
+    text-align: center;
+}
+
+/* Titles */
+.canvas h1 {
+    font-family: var(--font-heading);
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.35rem;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.75rem;
+}
+
+/* Form & Input Groups */
+#bmiForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+}
+
+.input-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.input-group input {
+    width: 100%;
+    height: 48px;
+    padding: 0 1rem;
+    border-radius: 14px;
+    border: 1px solid #cbd5e1;
+    background: rgba(255, 255, 255, 0.9);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--text-primary);
+    outline: none;
+    transition: all 0.25s ease;
+}
+
+.input-group input:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+    background: #ffffff;
+}
+
+/* Calculate Button */
+.calculate-btn {
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+    color: white;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+    margin-top: 0.5rem;
+}
+
+.calculate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(99, 102, 241, 0.4);
+}
+
+.calculate-btn:active {
+    transform: translateY(0);
+}
+
+/* Result Box */
+.result-box {
+    margin-top: 1rem;
+    padding: 1.25rem;
+    border-radius: 16px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.result-box.hidden {
+    display: none;
+}
+
+.result-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    color: var(--text-secondary);
+}
+
+.bmi-value {
+    font-family: var(--font-heading);
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.bmi-category {
+    font-size: 0.95rem;
+    font-weight: 700;
+    padding: 0.25rem 0.85rem;
+    border-radius: var(--radius-pill);
+}
+
+/* Category Guide Section */
+.categories-section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed var(--glass-border);
+    width: 100%;
+}
+
+.categories-section h3 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.6rem;
+}
+
+.cat-pill {
+    padding: 0.6rem 0.75rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.78rem;
+    font-weight: 600;
+    border: 1px solid transparent;
+}
+
+.cat-pill strong {
+    font-size: 0.85rem;
+    margin-top: 0.15rem;
+}
+
+/* Category Colors */
+.cat-blue {
+    background: #e0f2fe;
+    color: #0369a1;
+    border-color: #bae6fd;
+}
+
+.cat-green {
+    background: #dcfce7;
+    color: #15803d;
+    border-color: #bbf7d0;
+}
+
+.cat-yellow {
+    background: #fef9c3;
+    color: #a16207;
+    border-color: #fef08a;
+}
+
+.cat-red {
+    background: #fee2e2;
+    color: #b91c1c;
+    border-color: #fecaca;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

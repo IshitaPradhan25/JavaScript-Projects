@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <nav>
+        <a href="../index.html">Home</a>
+    </nav>
+
+    <div class="canvas">
+        <h1>BMI Calculator</h1>
+        <p class="subtitle">Calculate your Body Mass Index and check your health category</p>
+
+        <form id="bmiForm">
+            <div class="input-group">
+                <label for="weight">Weight (kg)</label>
+                <input type="number" id="weight" step="0.1" placeholder="e.g. 70" required />
+            </div>
+
+            <div class="input-group">
+                <label for="height">Height (m)</label>
+                <input type="number" id="height" step="0.01" placeholder="e.g. 1.75" required />
+            </div>
+
+            <button type="submit" class="calculate-btn">Calculate BMI</button>
+
+            <!-- Result Box -->
+            <div id="resultBox" class="result-box hidden">
+                <span class="result-label">Your BMI Score</span>
+                <span id="bmiValue" class="bmi-value">--</span>
+                <span id="bmiCategory" class="bmi-category">--</span>
+            </div>
+        </form>
+
+        <div class="categories-section">
+            <h3>BMI Categories Guide</h3>
+            <div class="category-grid">
+                <div class="cat-pill cat-blue">
+                    <span>Underweight</span>
+                    <strong>&lt; 18.5</strong>
+                </div>
+                <div class="cat-pill cat-green">
+                    <span>Normal</span>
+                    <strong>18.5 – 24.9</strong>
+                </div>
+                <div class="cat-pill cat-yellow">
+                    <span>Overweight</span>
+                    <strong>25 – 29.9</strong>
+                </div>
+                <div class="cat-pill cat-red">
+                    <span>Obesity</span>
+                    <strong>&ge; 30.0</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
