@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess a Number</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <nav>
+        <a href="../index.html">Home</a>
+    </nav>
+
+    <div class="canvas">
+        <h1>Guess the Number</h1>
+        <p class="subtitle">Try to guess a random number between 1 and 100. You have 10 attempts!</p>
+
+        <form id="guessForm">
+            <div class="input-group">
+                <label for="guessInput">Enter your guess</label>
+                <input type="number" id="guessInput" min="1" max="100" placeholder="1 - 100" autocomplete="off" required />
+            </div>
+
+            <button type="submit" id="submitBtn" class="submit-btn">Submit Guess</button>
+        </form>
+
+        <!-- Message / Hint Box -->
+        <p id="message" class="message"></p>
+
+        <!-- Stats Section -->
+        <div class="stats-container">
+            <div class="stat-box">
+                <span class="stat-title">Previous Guesses: </span>
+                <span id="prevGuesses" class="stat-value">None</span>
+            </div>
+
+            <div class="stat-box">
+                <span class="stat-title">Guesses Remaining: </span>
+                <span id="remainingGuesses" class="stat-value count">10</span>
+            </div>
+        </div>
+
+        <!-- Play Again Button (Hidden by default) -->
+        <button id="restartBtn" class="restart-btn hidden">Play Again</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
